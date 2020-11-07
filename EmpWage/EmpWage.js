@@ -1,19 +1,3 @@
-//UC1
-{
-const IS_ABSENT = 0;
-let empCheck = Math.floor(Math.random()*10)%2;
-if(empCheck == IS_ABSENT)
-{
-console.log("Employee is ABSENT FOR WHOLE MONTH");
-return;
-}
-else
-{
-console.log("Employee is PRESENT");
-}	 
-}
-
-
 
 //UC2 switch case 
 
@@ -37,16 +21,25 @@ switch(empCheck)
 }
 }
 }
+{
+  function calDailyWage(empDailyHrs)
+  {
+      return empDailyHrs*WAGE_PER_HOUR;
+  }
+}
 
 //UC5 Using while Loop statement
  let totalEmpHrs = 0;
 let totalWorkingDays = 0;
 const MAX_HRS_IN_MONTH = 100;
+let empDailyWageArr = new Array();
  while(totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
 {
 totalWorkingDays++;
 let empCheck = Math.floor(Math.random()*10)%3;
-totalEmpHrs  += getWorkingHours(empCheck);
+let empDailyHrs= getWorkingHours(empCheck);
+totalEmpHrs +=empDailyHrs;
+empDailyWageArr.push(calDailyWage(empDailyHrs));
 if(totalEmpHrs >100)
 {
 totalEmpHrs =100;
@@ -54,5 +47,5 @@ totalEmpHrs =100;
 }
 let  empWage = totalEmpHrs * WAGE_PER_HOUR;
 console.log("Total days : " +totalWorkingDays + 
-" ,Working Hours : "+totalEmpHrs+"  ,EMPLOYEE WAGE IS :" +empWage);
-
+", Working Hours : "+totalEmpHrs+", EMPLOYEE WAGE IS :" +empWage);
+console.log("Daily wages are : "+empDailyWageArr);
