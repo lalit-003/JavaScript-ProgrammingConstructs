@@ -137,7 +137,7 @@ function totalDaysWorked(numOfDays,dailyWage)
 
 console.log("number of days emp worked : " + empDailyWageArr.reduce(totalDaysWorked,0));
 
-//Uc8 map of employee daily wage
+//UC8 map of employee daily wage
 
 console.log(empDailyWageMap);
 function totalWages(totalWage,dailyWage)
@@ -147,7 +147,7 @@ function totalWages(totalWage,dailyWage)
 console.log("employee wage map totalHrs : "+Array.from(empDailyWageMap.values()).reduce(totalWages,0));
 
 
-//Uc 9 arrow functions 
+// UC 9 arrow functions 
 
 // const findTotal = (totalVal,dailyVal) => {return  totalVal+dailyVal};
 
